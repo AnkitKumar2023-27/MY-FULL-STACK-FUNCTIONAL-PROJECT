@@ -1,0 +1,32 @@
+<%layout("/layouts/Boilerplate")-%>
+<div class="row"> 
+    <div class="col-8 offset-3 mt-3"> 
+        <h3  class="col-8  mt-3">Signup in WanderLust</h3>
+        <form  method="POST"action="/signUp">
+            <div class="mb-3">
+                <label for="email" class="form-label"></label>
+                <input name="email" placeholder="enter Email"type="text" for="email" required/>
+             
+            </div>
+
+            <div class="mb-3">
+                <label for="username" class="form-label"></label>
+                <input name="username" placeholder="enter Username"type="text" for="username" required/>
+                <div class="valid-feedback">
+                 Looks good!
+               </div>
+               <div class="invalid-feedback">
+                 Fill User Name
+               </div>
+            </div>
+
+           
+            <div class="mb-3">
+                <label for="password" class="form-label"></label>
+                <input name="password" placeholder="enter password"type="password" for="Password" required/>
+               
+            </div>
+            <button class="btn btn-success">Signup</button>
+        </div>
+    </div>           
+        

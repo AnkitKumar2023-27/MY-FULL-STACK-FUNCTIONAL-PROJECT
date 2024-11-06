@@ -1,0 +1,22 @@
+<%layout("/layouts/Boilerplate")-%>
+<div class="row"> 
+    <div class="col-8 offset-3 mt-3"> 
+        <h3  class="col-8  mt-3">Signin in WanderLust</h3>
+        <form  method="POST"action="/login">
+           
+            <div class="mb-3">
+                <label for="username" class="form-label"></label>
+                <input name="username" placeholder="enter Username"type="text" for="username" required/>
+              
+            </div>
+
+           
+            <div class="mb-3">
+                <label for="password" class="form-label"></label>
+                <input name="password" placeholder="enter password"type="password" for="Password" required/>
+               
+            </div>
+            <button class="btn btn-success">Signin</button>
+        </div>
+    </div>           
+        

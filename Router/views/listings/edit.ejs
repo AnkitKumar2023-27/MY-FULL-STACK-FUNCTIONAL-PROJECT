@@ -1,0 +1,91 @@
+
+<%layout("/layouts/Boilerplate")-%>
+    <h3>Edit your listings</h3>
+
+   
+
+    <form method="POST"action="/listings/<%=this_listing._id%>?_method=PATCH" class="needs-validation"  novalidate>
+    <div class="row">
+    <div class="col-8 offset-7"></div>   
+           <form  method="POST"action="/Listings">
+           <div class="mb-3">
+               <label for="title" class="form-label"></label>
+               <input name="listing[title]"placeholder="enter title"type="text" value=<%=this_listing.title%> required/>
+               <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a title.
+              </div>
+           </div>
+          
+           <div class="mb-3">
+               <label for="description" class="form-label">description</label>
+               <textarea name="listing[description]" class="form-control"><%=this_listing.description%>  required</textarea>
+               <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a description.
+              </div>
+            </div>
+        
+       
+       <div class="mb-3">
+           <label for="image" class="form-label"></label>
+       <input name="listing[image]"placeholder="enter image URL/Link"type="text" value="<%=this_listing.image%>"class="form-control" required/>
+       <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please choose a image.
+      </div>
+    </div>
+   
+      
+    <div class="row">
+        <div class="mb-3 col-md-4">
+           <label for="price" class="form-label"></label>
+           <input name="listing[price]"placeholder="enter price"type="number"value="<%=this_listing.price%>" class="form-control" required/>    
+           <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a price.
+          </div>
+        </div>
+   
+       <div class="mb-3 col-md-8">
+           <label for="country" class="form-label"></label>
+           <input name="listing[country]"placeholder="enter country"type="text"value="<%=this_listing.country%>" class="form-control" required/>
+           <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please choose a country.
+          </div>
+ 
+    
+        </div>
+   
+    </div>
+      
+   
+       
+       <div class="mb-3">
+           <label for="location" class="form-label"></label>
+            <input name="listing[location]"placeholder="enter location"value="<%=this_listing.location%>"type="text" class="form-control"required/>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a location.
+              </div>
+    
+   
+      <button class="btn btn-danger">Add</button>
+       </form> 
+    </div>
+       </div>
+      
+    
