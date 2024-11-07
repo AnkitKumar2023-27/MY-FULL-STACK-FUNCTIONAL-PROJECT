@@ -23,7 +23,7 @@ const LocalStrategy=require("passport-local");
 const User=require("./models/user.js");
 const UserRouter=require("./Router/user.js");
 const MongoStore = require('connect-mongo');
-
+const dbUrl=process.env.ATLASDB_URL;
 
 
 app.set("view engine","ejs");
@@ -114,7 +114,7 @@ console.log("connection is working")})
 
 async function main() {
    await mongoose.connect(dbUrl );
-
+  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 };
 
 // /error handler
@@ -131,7 +131,9 @@ app.get("*",(req,res,next)=>{
      next(new ExpressError(404,"there is big error"))
 });
 app.use((err,req,res,next)=>{
+    // console.log("_______ERROR______")
     let{statusCode=500,message="Something went wrong "}=err;
+    // res.status(statusCode).send(message);
 res.render("./listings/error.ejs",{message});
 })
 
